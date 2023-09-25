@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 2</title>
+</head>
+
+<body>
+
+  <h3>Ejercicio 1</h3>
+  <input type="text" id="numeros" placeholder="Introduce numeros: 65,43,4"><button
+    onclick="generar('numeros')">Generar</button>
+  <br><button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+  <hr>
+  <h3>Ejercicio 2</h3>
+  <p>Introduce los primeros enteros separados por comas</p>
+  <input type="text" id="ejemplo1"><button onclick="generar('ejemplo1')">Ejemplo1</button>
+  <p>Introduce los segundos enteros separados por comas</p>
+  <input type="text" id="ejemplo2"><button onclick="generar('ejemplo2')">Ejemplo2</button>
+  <br>
+  <button onclick="concatenar()">Concatenar</button>
+  <p id="resultado2"></p>
+  <hr>
+  <h3>Ejercicio 3</h3>
+  <p>Introduce los primeros enteros separados por comas</p>
+  <input type="text" id="ejemplo3"><button onclick="generar('ejemplo3')">Introduce un ejemplo</button>
+  <br><br>
+  <button onclick="ascendente()">Ascendente</button>
+  <br><br>
+  <button onclick="descendente()">Descendente</button>
+  <p id="resultado3"></p>
+  <hr>
+  <p>Introduce los primeros enteros separados por comas:</p>
+  <input type="text" id="ejemplo4" placeholder="Array de Enteros"><button onclick="generar2()">Ejemplo</button>
+  <br><br>
+  <label>Valor: </label><input type="number" id="valor" placeholder="Numero a añadir"> <span>Posición del array: </span>
+  <select id="pos">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+  </select>
+  <button onclick="sustituir()">Insertar</button>
+  <p id="resultado4"></p>
+
+  <script>
+    function generar(inputID) {
+      var longitud = Math.floor(Math.random() * (6 - 2) + 2);
+      var numeros = new Array(longitud);
+      for (let i = 0; i < numeros.length; i++) {
+        numeros[i] = Math.floor(Math.random() * (100 - 1) + 1);
+      }
+
+      document.getElementById(inputID).value = numeros;
+    }
+
+  </script>
+  <script>
+    function calcular() {
+      var numeros = document.getElementById("numeros").value;
+      var arrayNumeros = numeros.split(",");
+      var suma = 0;
+      var media = 0;
+      var mayor = 0;
+      var menor = 0;
+      for (let i = 0; i < arrayNumeros.length; i++) {
+        suma += parseInt(arrayNumeros[i]);
+      }
+      media = suma / arrayNumeros.length;
+      mayor = Math.max(...arrayNumeros);
+      menor = Math.min(...arrayNumeros);
+
+      if (numeros.length == 0) {
+        document.getElementById("resultado").innerHTML = "No has introducido ningún número";
+      } else {
+        document.getElementById("resultado").innerHTML = "La suma de los números es: " + suma + "<br> La media de los números es: " + media + "<br> El número mayor es: " + mayor + "<br> El número menor es: " + menor;
+      }
+
+    }
+  </script>
+  <script>
+    function concatenar() {
+      var elem1 = document.getElementById("ejemplo1").value;
+      var arrayElem1 = elem1.split(",");
+      var elem2 = document.getElementById("ejemplo2").value;
+      var arrayElem2 = elem2.split(",");
+      var concatenado = arrayElem1.concat(arrayElem2);
+
+      if (elem1.length == 0 || elem2.length == 0) {
+        document.getElementById("resultado2").innerHTML = "No has introducido los suficientes números"
+      } else {
+        document.getElementById("resultado2").innerHTML = "La concatenación de " + elem1 + " más " + elem2 + " es: " + concatenado;
+      }
+    }
+  </script>
+  <script>
+    function ascendente() {
+      var numeros = document.getElementById("ejemplo3").value;
+      var arrayNumeros = numeros.split(",");
+      var ordenado = arrayNumeros.sort((a, b) => a - b);
+      document.getElementById("resultado3").innerHTML = "El orden ascendente es: " + ordenado;
+    }
+
+    function descendente() {
+      var numeros = document.getElementById("ejemplo3").value;
+      var arrayNumeros = numeros.split(",");
+      var ordernadoDesc = arrayNumeros.sort((a, b) => b - a);
+      document.getElementById("resultado3").innerHTML = "El orden descendente es: " + ordernadoDesc;
+    }
+  </script>
+  <script>
+    function generar2() {
+      var numeros = new Array(6);
+      for (let i = 0; i < numeros.length; i++) {
+        numeros[i] = Math.floor(Math.random() * (100 - 1) + 1);
+      }
+
+      document.getElementById("ejemplo4").value = numeros;
+    }
+
+    function sustituir() {
+      var numeros = document.getElementById("ejemplo4").value;
+      var arrayNumeros = numeros.split(",");
+      var posicion = document.getElementById("pos").value;
+      var numero = document.getElementById("valor").value;
+
+      arrayNumeros[posicion - 1] = numero;
+      document.getElementById("resultado4").innerHTML = "El resultado al cambiar la posición " + posicion + " sería: " + arrayNumeros;
+    }
+  </script>
+</body>
+
+</html>

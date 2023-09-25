@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 1-1</title>
+  <script>
+
+    //Funciones
+    function sumar(a, b) {
+      return a + b;
+    }
+    function restar(a, b) {
+      return a - b;
+    }
+    function multiplicar(a, b) {
+      return a * b;
+    }
+    function dividir(a, b) {
+      return a / b;
+    }
+
+    //Asignamos valores a las variables
+    var a = 8, b = 4;
+
+    //Almacenamos los resultados de las funciones en un array  
+    var resultados = [sumar(a, b), restar(a, b), multiplicar(a, b), dividir(a, b)]
+
+    //Mostramos con alert todos los resultados en orden respectivamente
+    alert(`El resultado de sumar ${a} + ${b} es ${resultados[0]}
+El resultado de restar ${a} - ${b} es ${resultados[1]}
+El resultado de multiplicar ${a} * ${b} es ${resultados[2]}
+El resultado de dividir ${a} / ${b} es ${resultados[3]}`);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

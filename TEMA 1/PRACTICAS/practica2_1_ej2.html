@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica 2-1 Ej-2</title>
+</head>
+
+<body>
+  <h3>Ejercicio 2</h3>
+  <p>Introduce los primeros enteros separados por comas</p>
+  <input type="text" id="ejemplo1"><button onclick="generar('ejemplo1')">Ejemplo1</button>
+  <p>Introduce los segundos enteros separados por comas</p>
+  <input type="text" id="ejemplo2"><button onclick="generar('ejemplo2')">Ejemplo2</button>
+  <br>
+  <button onclick="concatenar()">Concatenar</button>
+  <p id="resultado2"></p>
+  <hr>
+
+  <script>
+    function generar(inputID) {
+      var longitud = Math.floor(Math.random() * (6 - 2) + 2);
+      var numeros = new Array(longitud);
+      for (let i = 0; i < numeros.length; i++) {
+        numeros[i] = Math.floor(Math.random() * (100 - 1) + 1);
+      }
+
+      document.getElementById(inputID).value = numeros;
+    }
+
+  </script>
+
+  <script>
+    function concatenar() {
+      var elem1 = document.getElementById("ejemplo1").value;
+      var arrayElem1 = elem1.split(",");
+      var elem2 = document.getElementById("ejemplo2").value;
+      var arrayElem2 = elem2.split(",");
+      var concatenado = arrayElem1.concat(arrayElem2);
+
+      if (elem1.length == 0 || elem2.length == 0) {
+        document.getElementById("resultado2").innerHTML = "No has introducido los suficientes números"
+      } else {
+        document.getElementById("resultado2").innerHTML = "La concatenación de " + elem1 + " más " + elem2 + " es: " + concatenado;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
