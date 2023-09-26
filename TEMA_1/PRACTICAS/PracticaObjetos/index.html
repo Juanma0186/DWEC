@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Libros</title>
+</head>
+
+<body>
+  <h1>📖Biblioteca📖</h1>
+  <div id="libros" class="libros">
+    <p id="intro"></p>
+    <table id="tabla">
+      <tr>
+        <td>TITULO</td>
+        <td>AUTOR</td>
+        <td>FECHA</td>
+      </tr>
+    </table>
+  </div>
+  <button onclick="añadir()">Añadir libro</button>
+  <button onclick="eliminar()">Eliminar libro</button>
+
+  <script>
+
+    //Array de libros
+    const libros = [];
+
+    //Funcion para agregar libro
+    function añadir() {
+
+      //Variables donde almacenaremos los datos de los libros
+      const titulo = prompt("Ingresa el titulo");
+      const autor = prompt("Ingresa el nombre del autor");
+      const fecha = prompt("Ingresa la fecha de publicación");
+
+      //Creamos el objeto libro
+      const libro = {
+        titulo: titulo,
+        autor: autor,
+        fecha: fecha
+      };
+
+      //Añadimos el libro al array de libros
+      libros.push(libro);
+
+      //Obtenemos la tabla y creamos nueva fila
+      const tabla = document.getElementById('tabla');
+      const nuevaFila = tabla.insertRow();
+
+      //Creamos cada celda de la tabla
+      const cTitulo = nuevaFila.insertCell(0);
+      const cAutor = nuevaFila.insertCell(1);
+      const cFecha = nuevaFila.insertCell(2);
+
+      //Añdimos los datos a las celdas creadas
+      cTitulo.textContent = libro.titulo;
+      cAutor.textContent = libro.autor;
+      cFecha.textContent = libro.fecha;
+
+    }
+
+    function eliminar() {
+
+      if (libros.length > 0) {
+
+        const tituloEliminar = prompt("Introduce el título del libro a eliminar");
+        let indices = [];
+
+        for (let i = 0; i < libros.length; i++) {
+
+          if (libros[i].titulo === tituloEliminar) {
+
+            indices.push(i);
+          }
+        }
+
+        if (indices.length > 0) {
+
+          for (let i = indices.length - 1; i >= 0; i--) {
+
+            libros.splice(indices[i], 1);
+          }
+
+          const tabla = document.getElementById('tabla');
+
+          for (let i = indices.length - 1; i >= 0; i--) {
+
+            tabla.deleteRow(indices[i] + 1);
+          }
+        } else {
+          alert("No existe ningún libro con ese título");
+        }
+      } else {
+        alert("No has introducido ningún libro");
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
