@@ -68,6 +68,10 @@ button {
   transition: all 0.4s ease;
 }
 
+i {
+  cursor: pointer;
+}
+
 button:hover {
   border: #fff 3px solid;
   background: #ba945b;
