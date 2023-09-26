@@ -4,24 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Gestión de Libros</title>
 </head>
 
 <body>
-  <h1>📖Biblioteca📖</h1>
-  <div id="libros" class="libros">
-    <p id="intro"></p>
-    <table id="tabla">
-      <tr>
-        <td>TITULO</td>
-        <td>AUTOR</td>
-        <td>FECHA</td>
-      </tr>
-    </table>
+  <div class="container">
+    <h1>📖Biblioteca📖</h1>
+    <div id="libros" class="libros">
+      <p id="intro"></p>
+      <table id="tabla">
+        <tr class="titulos">
+          <td>TITULO</td>
+          <td>AUTOR</td>
+          <td>FECHA</td>
+        </tr>
+      </table>
+    </div>
+    <div class="botones">
+      <button onclick="añadir()">Añadir libro</button>
+      <button onclick="eliminar()">Eliminar libro</button>
+    </div>
   </div>
-  <button onclick="añadir()">Añadir libro</button>
-  <button onclick="eliminar()">Eliminar libro</button>
-
   <script>
 
     //Array de libros
