@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4 - Repaso</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="lista">
+      <h1>Lista de Estudiantes</h1>
+      <table id="tabla" border="1">
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Materias</th>
+        </tr>
+
+      </table>
+      <button onclick="añadirEstudiante()">Añadir Estudiante</button>
+      <button onclick="mostrarInfo()">Mostrar Info</button>
+    </div>
+    <div id="info">
+
+    </div>
+  </div>
+
+  <script>
+    const estudiantes = [];
+
+    function añadirEstudiante() {
+
+      let nombre = prompt("Introduce el nombre del alumno");
+      let edad = prompt("Introduce la edad de " + nombre);
+      let materias = prompt("Introduce las materias de " + nombre + " separadas por comas");
+
+      const estudiante = {
+        nombre: nombre,
+        edad: edad,
+        materias: materias.split(',')
+      };
+
+      estudiantes.push(estudiante);
+
+      const tabla = document.getElementById("tabla");
+      const nuevaFila = tabla.insertRow();
+
+      //Creamos cada celda de la tabla
+      const cNombre = nuevaFila.insertCell(0);
+      const cEdad = nuevaFila.insertCell(1);
+      const cMaterias = nuevaFila.insertCell(2);
+
+      //Añdimos los datos a las celdas creadas
+      cNombre.textContent = estudiante.nombre;
+      cEdad.textContent = estudiante.edad;
+      cMaterias.textContent = estudiante.materias;
+
+    }
+
+    function mostrarInfo() {
+      const estudianteAMostrar = prompt("Introduce el nombre del estudiante a mostrar");
+
+      var info = document.getElementById('info');
+      info.innerHTML = ''; // Limpia el contenido anterior
+
+      estudiantes.forEach(estudiante => {
+        if (estudiante.nombre == estudianteAMostrar) {
+
+          info.innerHTML += "<h2>Información de " + estudiante.nombre + "</h2>"
+            + "<p>Edad: " + estudiante.edad + "</p>"
+            + "<p>Materias: " + estudiante.materias.join(', ') + "</p>";
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>
