@@ -83,7 +83,6 @@ function ordenarPor($tipo) {
       } else if (
         document.getElementById("titulo").classList.contains("fa-caret-up")
       ) {
-        console.log("hola");
         libros.sort((a, b) => b.titulo.localeCompare(a.titulo));
 
         document.getElementById("titulo").classList.remove("fa-caret-up");
