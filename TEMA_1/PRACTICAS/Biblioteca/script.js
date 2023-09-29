@@ -7,12 +7,14 @@ function añadir() {
   const titulo = prompt("Ingresa el titulo");
   const autor = prompt("Ingresa el nombre del autor");
   const fecha = prompt("Ingresa la fecha de publicación");
+  const genero = prompt("Ingresa el genero del libro");
 
   //Creamos el objeto libro
   const libro = {
     titulo: titulo,
     autor: autor,
     fecha: fecha,
+    genero: genero,
   };
 
   //Añadimos el libro al array de libros
@@ -26,11 +28,13 @@ function añadir() {
   const cTitulo = nuevaFila.insertCell(0);
   const cAutor = nuevaFila.insertCell(1);
   const cFecha = nuevaFila.insertCell(2);
+  const cGenero = nuevaFila.insertCell(3);
 
   //Añdimos los datos a las celdas creadas
   cTitulo.textContent = libro.titulo;
   cAutor.textContent = libro.autor;
   cFecha.textContent = libro.fecha;
+  cGenero.textContent = libro.genero;
 }
 
 function eliminar() {
@@ -126,6 +130,24 @@ function ordenarPor($tipo) {
         document.getElementById("fecha").classList.add("fa-caret-down");
         break;
       }
+    case "genero": //Ordenar por genero
+      if (
+        document.getElementById("genero").classList.contains("fa-caret-down")
+      ) {
+        libros.sort((a, b) => a.genero.localeCompare(b.genero));
+
+        document.getElementById("genero").classList.remove("fa-caret-down");
+        document.getElementById("genero").classList.add("fa-caret-up");
+        break;
+      } else if (
+        document.getElementById("genero").classList.contains("fa-caret-up")
+      ) {
+        libros.sort((a, b) => b.genero.localeCompare(a.genero));
+
+        document.getElementById("genero").classList.remove("fa-caret-up");
+        document.getElementById("genero").classList.add("fa-caret-down");
+        break;
+      }
   }
 
   // Obtener la tabla y su cuerpo
@@ -143,9 +165,11 @@ function ordenarPor($tipo) {
     const cTitulo = nuevaFila.insertCell(0);
     const cAutor = nuevaFila.insertCell(1);
     const cFecha = nuevaFila.insertCell(2);
+    const cGenero = nuevaFila.insertCell(3);
 
     cTitulo.textContent = libro.titulo;
     cAutor.textContent = libro.autor;
     cFecha.textContent = libro.fecha;
+    cGenero.textContent = libro.genero;
   });
 }
