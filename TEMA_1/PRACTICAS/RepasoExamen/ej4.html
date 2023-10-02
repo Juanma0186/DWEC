@@ -11,20 +11,27 @@
   <div class="container">
     <div class="lista">
       <h1>Lista de Estudiantes</h1>
-      <table id="tabla" border="1">
-        <tr>
-          <th>Nombre</th>
-          <th>Edad</th>
-          <th>Materias</th>
-        </tr>
 
+      <table id="tabla" border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Materias</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
       </table>
+
       <button onclick="añadirEstudiante()">Añadir Estudiante</button>
+      <button onclick="agregarMateria()">Agregar Materia</button>
       <button onclick="mostrarInfo()">Mostrar Info</button>
     </div>
-    <div id="info">
 
+    <div id="info">
     </div>
+
   </div>
 
   <script>
@@ -43,20 +50,18 @@
       };
 
       estudiantes.push(estudiante);
+      pintarTabla();
+    }
 
-      const tabla = document.getElementById("tabla");
-      const nuevaFila = tabla.insertRow();
+    function pintarTabla() {
+      var tabla = document.getElementById('tbody');
+      tabla.innerHTML = ''; // Limpia el contenido anterior
 
-      //Creamos cada celda de la tabla
-      const cNombre = nuevaFila.insertCell(0);
-      const cEdad = nuevaFila.insertCell(1);
-      const cMaterias = nuevaFila.insertCell(2);
-
-      //Añdimos los datos a las celdas creadas
-      cNombre.textContent = estudiante.nombre;
-      cEdad.textContent = estudiante.edad;
-      cMaterias.textContent = estudiante.materias;
-
+      estudiantes.forEach(estudiante => {
+        tabla.innerHTML += "<tr><td>" + estudiante.nombre + "</td>"
+          + "<td>" + estudiante.edad + "</td>"
+          + "<td>" + estudiante.materias.join(', ') + "</td></tr>";
+      });
     }
 
     function mostrarInfo() {
@@ -73,6 +78,24 @@
             + "<p>Materias: " + estudiante.materias.join(', ') + "</p>";
         }
       });
+
+      pintarTabla();
+    }
+
+    function agregarMateria() {
+      const posicion = prompt("Elige la posición del alumno");
+      const materia = prompt("¿Qué materia/as desea agregar?");
+      const alumnoElegido = estudiantes[posicion];
+
+      if (posicion < estudiantes.length && materia != null) {
+
+        alumnoElegido.materias.push(materia);
+        alert("Materia/s agregada/s correctamente");
+      } else {
+        console.log("muy false")
+        alert("No existe ningún estudiante en esa posición o no has introducido ninguna materia")
+      }
+      pintarTabla();
     }
 
   </script>
