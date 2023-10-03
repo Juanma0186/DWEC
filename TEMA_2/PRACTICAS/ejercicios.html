@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios</title>
+</head>
+
+<body>
+  <h1 id="titulo">Esto es un título</h1>
+  <p id="parrafo">Hola Mundo!</p>
+  <button onclick="cambiarTexto()">Cambiar texto</button>
+
+  <hr>
+
+  <ul>
+    <li class="elemento">Elemento 1</li>
+    <li class="elemento">Elemento 2</li>
+    <li class="elemento">Elemento 3</li>
+    <li class="elemento">Elemento 4</li>
+  </ul>
+  <button onclick="cambiarColores()">Cambiar colores</button>
+
+  <hr>
+
+  <ul id="listaPeliculas">
+    <li class="consola">Titanic</li>
+    <li class="consola">Avatar</li>
+    <li class="consola">Star Wars</li>
+    <li class="consola">El señor de los anillos</li>
+  </ul>
+
+  <button onclick="textoVerde()">Texto verde</button>
+
+
+  <script>
+
+    function cambiarTexto() {
+      document.getElementById("titulo").textContent = "Hola Universo!";
+      document.getElementById("titulo").style.color = "blue";
+      document.getElementById("parrafo").textContent = "Parrafo cambiado con JS";
+    }
+  </script>
+
+  <script>
+    function cambiarColores() {
+      var elementos = Array.from(document.getElementsByClassName("elemento"));
+
+      elementos.forEach(element => {
+        element.style.backgroundColor = getRandomColor();
+        element.style.color = "red";
+      });
+    }
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+
+  <script>
+    function textoVerde() {
+      var listaPeliculas = Array.from(document.getElementById("listaPeliculas").getElementsByTagName("li"));
+
+      listaPeliculas.forEach(pelicula => {
+        pelicula.style.color = "green";
+      });
+    }
+  </script>
+
+  <script>
+    window.onload = function () {
+      var elementos = document.getElementsByClassName("consola");
+      for (let i = 0; i < elementos.length; i++) {
+        console.log("Película " + (i + 1) + ": " + elementos[i].textContent);
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

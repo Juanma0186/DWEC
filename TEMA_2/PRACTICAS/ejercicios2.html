@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios 2</title>
+</head>
+
+<body>
+  <div class="item">
+    <p>Elemento 1</p>
+    <p>Elemento 2</p>
+    <p>Elemento 3</p>
+  </div>
+  <div class="item destacado">
+    <p>Elemento 4</p>
+    <p>Elemento 5</p>
+    <p>Elemento 6</p>
+    <p>Elemento 7</p>
+  </div>
+
+  <div class="item oculto">
+    <p>Elemento 7</p>
+    <p>Elemento 8</p>
+    <p>Elemento 9</p>
+  </div>
+
+  <hr>
+
+  <h1>Título</h1>
+  <div id="contenedor">
+    <p class="destacado">Párrafo 1</p>
+    <p class="destacado">Párrafo 2</p>
+    <ul>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ul>
+  </div>
+
+
+  <script>
+    window.onload = function () {
+      const items = document.querySelectorAll(".item p");
+      const destacados = document.querySelectorAll(".destacado p:nth-child(-n+3)");
+      const oculto = document.querySelectorAll(".oculto p:nth-last-child(-n+2)");
+
+      for (let i = 0; i < items.length; i++) {
+        console.log(items[i].textContent);
+      }
+      console.log("--------------------------------------------------");
+      for (let i = 0; i < 3; i++) {
+        console.log(destacados[i].textContent);
+      }
+      console.log("--------------------------------------------------");
+      for (let i = 0; i < oculto.length; i++) {
+        console.log(oculto[i].textContent);
+      }
+    }
+
+    //Ej2----------------------------------------------------------------
+
+    const titulo = document.querySelector("h1");
+    console.log(titulo);
+
+    const contenedor = document.querySelector("#contenedor");
+    console.log(contenedor);
+
+    const parrafo = document.querySelector("p.destacado");
+    console.log(parrafo);
+
+    const elemento = document.querySelector("ul li:nth-child(2)");
+    console.log(elemento);
+
+    console.log("--------------------------------------------------");
+
+  </script>
+</body>
+
+</html>
