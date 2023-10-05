@@ -27,6 +27,7 @@
       <button onclick="añadirEstudiante()">Añadir Estudiante</button>
       <button onclick="agregarMateria()">Agregar Materia</button>
       <button onclick="mostrarInfo()">Mostrar Info</button>
+      <button onclick="eliminarEstudiantePorNombre()">Eliminar Estudiante</button>
     </div>
 
     <div id="info">
@@ -95,6 +96,22 @@
         console.log("muy false")
         alert("No existe ningún estudiante en esa posición o no has introducido ninguna materia")
       }
+      pintarTabla();
+    }
+
+    function eliminarEstudiantePorNombre() {
+      const nombre = prompt("Introduce el nombre del estudiante a eliminar");
+
+      // Buscar el índice del estudiante por su nombre
+      const posicion = estudiantes.findIndex(estudiante => estudiante.nombre === nombre);
+
+      if (posicion !== -1) {
+        estudiantes.splice(posicion, 1); // Eliminar el estudiante del array
+        alert("Estudiante eliminado correctamente");
+      } else {
+        alert("No existe ningún estudiante con ese nombre");
+      }
+
       pintarTabla();
     }
 
