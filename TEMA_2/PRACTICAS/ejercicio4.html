@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4</title>
+</head>
+
+<body>
+  <div>
+    <p id="parrafo">Este es un párrafo de ejemplo</p>
+    <button onclick="cambiarInner()">Cambiar con innerHTML</button>
+    <button onclick="cambiarContent()">Cambiar con textContent</button>
+  </div>
+
+  <script>
+
+    function cambiarInner() {
+      document.getElementById('parrafo').innerHTML = "Este es un párrafo cambiado con innerHTML";
+    }
+
+    function cambiarContent() {
+      document.getElementById('parrafo').textContent = "Este es un párrafo cambiado con textContent";
+    }
+  </script>
+</body>
+
+</html>

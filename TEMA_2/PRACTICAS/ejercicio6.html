@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 6</title>
+</head>
+
+<body>
+  <h1>Interacción con value, innerHTML y textContent</h1>
+  <input type="text" id="campo" value="Texto de Entrada">
+  <p id="parrafo">Este es un párrafo de ejemplo.</p>
+  <button onclick="cambiarValue()">Cambiar value</button>
+  <button onclick="cambiarInner()">Cambiar con innerHTML</button>
+  <button onclick="cambiarContent()">Cambiar con textContent</button>
+
+  <script>
+
+    function cambiarValue() {
+      document.getElementById('campo').value = "Nuevo valor del campo";
+    }
+
+    function cambiarInner() {
+      document.getElementById('parrafo').innerHTML = "¡El contenido ha sido cambiado con innerHTML!";
+    }
+
+    function cambiarContent() {
+      document.getElementById('parrafo').textContent = "¡El contenido ha sido cambiado con textContent!";
+    }
+  </script>
+</body>
+
+</html>

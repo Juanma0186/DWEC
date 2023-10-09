@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 8</title>
+  <style>
+    img {
+      max-width: 400px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cambio de imagen</h1>
+  <img src="img/img1.webp" alt="Imagen 1" id="imagen"><br>
+  <button onclick="cambiarImagen()">Cambiar imagen</button>
+
+  <script>
+    function cambiarImagen() {
+
+      var imagenes = ["http://localhost:8080/TEMA_2/PRACTICAS/img/img1.webp", "http://localhost:8080/TEMA_2/PRACTICAS/img/img2.webp", "http://localhost:8080/TEMA_2/PRACTICAS/img/img3.webp"];
+      var indice = imagenes.indexOf(document.getElementById('imagen').src);
+      console
+      if (indice == imagenes.length - 1) {
+        document.getElementById('imagen').src = imagenes[0];
+      } else {
+        document.getElementById('imagen').src = imagenes[indice + 1];
+      }
+    }
+  </script>
+</body>
+
+</html>

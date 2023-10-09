@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercico 10</title>
+</head>
+
+<body>
+  <h1>Cambiar Estado "checked" con el DOM</h1>
+  <input type="checkbox" id="checkbox">
+  <button onclick="cambiarEstado()">Cambiar estado</button>
+  <p id="parrafo">El checkbox está desmarcado.</p>
+
+  <script>
+    function cambiarEstado() {
+      document.getElementById('checkbox').checked = !document.getElementById('checkbox').checked;
+
+      if (document.getElementById('checkbox').checked) {
+        document.getElementById('parrafo').textContent = "El checkbox está marcado.";
+      } else {
+        document.getElementById('parrafo').textContent = "El checkbox está desmarcado.";
+      }
+    }
+  </script>
+</body>
+
+</html>
