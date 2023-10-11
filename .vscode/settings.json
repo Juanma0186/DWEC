@@ -1,0 +1,20 @@
+{
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono,  Monospace",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.letterSpacing": 0,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontWeightBold": "600",
+  "terminal.integrated.tabs.enabled": true,
+
+  /* Telemetry */
+  "telemetry.telemetryLevel": "off",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  /* WorkBench */
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.list.smoothScrolling": true
+}

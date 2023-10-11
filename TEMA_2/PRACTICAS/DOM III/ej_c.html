@@ -1,0 +1,60 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      border: 3px solid #222;
+      padding: 2.5em;
+      width: 20em;
+    }
+
+    .resaltado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+  <title>Ejercicio C</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Elemento a Resaltar</h1>
+    <p id="parrafo">Este es un párrafo que puede ser resaltado.</p>
+    <button id="resaltar" onclick="resaltar()">+</button>
+    <p id="resaltado?"></p>
+    <button id="verificar" onclick="verificarResaltado()">Verificar Resaltado</button>
+  </div>
+  <script>
+
+    function resaltar() {
+
+      var parrafo = document.getElementById("parrafo");
+      var boton = document.getElementById("resaltar");
+
+      if (parrafo.classList.contains("resaltado")) {
+        parrafo.classList.toggle("resaltado");
+        boton.innerHTML = "+";
+
+      } else {
+        parrafo.classList.toggle("resaltado");
+        boton.innerHTML = "-";
+      }
+    }
+
+    function verificarResaltado() {
+      var parrafo = document.getElementById("parrafo");
+
+      if (parrafo.classList.contains("resaltado")) {
+        document.getElementById("resaltado?").innerHTML = "El párrafo está resaltado";
+      } else {
+        document.getElementById("resaltado?").innerHTML = "El párrafo no está resaltado";
+      }
+    }
+  </script>
+</body>
+
+</html>
