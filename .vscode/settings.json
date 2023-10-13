@@ -13,7 +13,6 @@
   "telemetry.telemetryLevel": "off",
   "workbench.settings.enableNaturalLanguageSearch": false,
   /* WorkBench */
-  "workbench.iconTheme": "vscode-icons",
   "workbench.tree.indent": 15,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.list.smoothScrolling": true
