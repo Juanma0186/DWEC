@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 2-1</title>
+  <style>
+    .resaltar {
+      background-color: blueviolet;
+      border: 2px solid black;
+      color: white;
+      font-weight: bold;
+      width: fit-content;
+      padding: 10px;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Práctica DOM Avanzada</h1>
+  <section id="seccion1">
+    <h2>Sección 1</h2>
+    <button onclick="resaltar('seccion1')">Resaltar elementos</button>
+    <button onclick="ocultar('seccion1')">Ocultar elementos</button>
+    <button onclick="mostrar('seccion1')">Mostrar elementos</button>
+
+    <ul>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ul>
+
+  </section>
+
+  <section id="seccion2">
+    <h2>Sección 2</h2>
+    <button onclick="resaltar('seccion2')">Resaltar elementos</button>
+    <button onclick="ocultar('seccion2')">Ocultar elementos</button>
+    <button onclick="mostrar('seccion2')">Mostrar elementos</button>
+
+    <ol>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ol>
+  </section>
+
+  <section id="seccion3">
+    <h2>Sección 3</h2>
+    <button onclick="resaltar('seccion3')">Resaltar elementos</button>
+    <button onclick="ocultar('seccion3')">Ocultar elementos</button>
+    <button onclick="mostrar('seccion3')">Mostrar elementos</button>
+
+    <ul>
+      <li>Elemento X</li>
+      <li>Elemento Y</li>
+      <li>Elemento Z</li>
+    </ul>
+  </section>
+
+  <script>
+
+    function resaltar(id) {
+      var element = document.getElementById(id).querySelectorAll("li");
+      element.forEach(element => {
+        element.classList.toggle("resaltar");
+      });
+    }
+
+    function ocultar(id) {
+      var element = document.getElementById(id).querySelector('ul');
+      element.style.display = "none";
+    }
+
+    function mostrar(id) {
+      var element = document.getElementById(id).querySelector('ul');
+      element.style.display = "block";
+    }
+
+  </script>
+
+</body>
+
+</html>
