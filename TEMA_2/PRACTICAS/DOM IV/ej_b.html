@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercici B</title>
+  <style>
+    #emailError {
+      border: 1px solid red;
+      background: rgb(199, 80, 80);
+    }
+
+    #emailError:focus {
+      outline-color: red;
+    }
+
+    #error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Formulario de Registro</h1>
+  <form action="" method="">
+    <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre"><br>
+    <label for="email">Email: </label><input type="email" name="email" id="email"><br>
+    <p id="error"></p>
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <script>
+    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    var campoEmail = document.getElementById('email');
+    var msg = document.getElementById('error');
+
+    //lo comprueba mientras se escribe
+    campoEmail.addEventListener("input", validar);
+
+    function validar() {
+      let email = campoEmail.value;
+
+      if (email === "") {
+        campoEmail.setAttribute("id", "emailError");
+        msg.innerHTML = "El email no puede estar vacío";
+      } else if (!regex.test(email)) {
+        msg.innerHTML = "El email no es válido";
+        campoEmail.setAttribute("id", "emailError");
+      } else {
+        msg.innerHTML = "";
+        campoEmail.setAttribute("id", "email");
+      }
+    }
+  </script>
+</body>
+
+</html>

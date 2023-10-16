@@ -70,13 +70,23 @@
     }
 
     function ocultar(id) {
-      var element = document.getElementById(id).querySelector('ul');
-      element.style.display = "none";
+      if (id === "seccion2") {
+        var element = document.getElementById(id).querySelector('ol');
+        element.style.display = "none";
+      } else {
+        var element = document.getElementById(id).querySelector('ul');
+        element.style.display = "none";
+      }
     }
 
     function mostrar(id) {
-      var element = document.getElementById(id).querySelector('ul');
-      element.style.display = "block";
+      if (id === "seccion2") {
+        var element = document.getElementById(id).querySelector('ol');
+        element.style.display = "block";
+      } else {
+        var element = document.getElementById(id).querySelector('ul');
+        element.style.display = "block";
+      }
     }
 
   </script>
