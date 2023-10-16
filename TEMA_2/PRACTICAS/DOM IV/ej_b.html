@@ -15,6 +15,15 @@
       outline-color: red;
     }
 
+    #emailCorrecto {
+      border: 1px solid green;
+      background: rgb(80, 199, 80);
+    }
+
+    #emailCorrecto:focus {
+      outline-color: green;
+    }
+
     #error {
       color: red;
     }
@@ -49,7 +58,7 @@
         campoEmail.setAttribute("id", "emailError");
       } else {
         msg.innerHTML = "";
-        campoEmail.setAttribute("id", "email");
+        campoEmail.setAttribute("id", "emailCorrecto");
       }
     }
   </script>
