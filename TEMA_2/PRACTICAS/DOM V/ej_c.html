@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejericio C</title>
+  <style>
+    .resaltado {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contenedor">
+    <p>Mi primer párrafo</p>
+    <span>Span 1</span>
+    <span>Span 2</span>
+    <p>Mi segundo párrafo</p>
+  </div>
+  <button onclick="resaltarAnteriores()">Resaltar Anteriores</button>
+  <button onclick="resaltarSiguientes()">Resaltar Siguientes</button>
+
+
+  <script>
+
+    // Función para resaltar el siguiente elemento span
+    function resaltarSiguientes() {
+      var contenedor = document.getElementById("contenedor");
+      var parrafo = contenedor.querySelector("p");
+      var siguiente = parrafo.nextElementSibling;
+
+      // Verificar si es un elemento span y resaltarlo
+      if (siguiente && siguiente.tagName === "SPAN") {
+        siguiente.classList.add("resaltado");
+      }
+    }
+
+
+    function resaltarAnteriores() {
+
+      var contenedor = document.getElementById("contenedor");
+      var parrafo = contenedor.lastElementChild;
+      var anterior = parrafo.previousElementSibling;
+      console.log(anterior);
+
+      // Verificar si es un elemento span y resaltarlo
+      if (anterior && anterior.tagName === "SPAN") {
+        anterior.classList.add("resaltado");
+      }
+
+    }
+  </script>
+</body>
+
+</html>

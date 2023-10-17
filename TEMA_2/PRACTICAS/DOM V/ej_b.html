@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio B</title>
+
+  <style>
+    .resaltado {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contenedor">
+    <p>Mi primer párrafo</p>
+    <span>Span 1</span>
+    <span>Span 2</span>
+    <p>Mi segundo párrafo</p>
+  </div>
+
+  <button onclick="resaltar()">Resaltar primer y último párrafo</button>
+
+  <script>
+
+    function resaltar() {
+      let primerP = document.getElementById("contenedor").firstElementChild;
+      let ultimoP = document.getElementById("contenedor").lastElementChild;
+
+
+      primerP.classList.toggle("resaltado");
+      ultimoP.classList.toggle("resaltado");
+    }
+  </script>
+
+</body>
+
+</html>

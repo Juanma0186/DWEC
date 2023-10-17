@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio C</title>
+</head>
+
+<body>
+  <div id="miDiv">
+
+  </div>
+  <button onclick="create()">Añadir P</button>
+  <button onclick="eliminarParrafo()">Eliminar 3er P</button>
+
+  <script>
+
+    var cont = 0;
+    function create() {
+
+      let miDiv = document.getElementById('miDiv');
+      let nuevoP = document.createElement("p");
+
+      nuevoP.innerHTML = `<strong>Párrafo ${++cont}:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
+
+      miDiv.appendChild(nuevoP);
+    }
+
+    function eliminarParrafo() {
+      let miDiv = document.getElementById('miDiv');
+      let parrafos = miDiv.querySelectorAll('p');
+
+      if (parrafos.length >= 3) {
+        let tercerParrafo = miDiv.children[2];
+        miDiv.removeChild(tercerParrafo);
+        cont--;
+      } else {
+        alert("No existe el tercer párrafo");
+      }
+    }
+  </script>
+</body>
+
+</html>

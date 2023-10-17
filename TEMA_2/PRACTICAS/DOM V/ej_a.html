@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio A</title>
+</head>
+
+<body>
+  <div id="contenedor">
+    <p>Mi primer párrafo</p>
+    <p>Mi segundo párrafo</p>
+    <span>Span 1</span>
+    <span>Span 2</span>
+  </div>
+  <button onclick="modificar()">Modificar Contenedor</button>
+
+  <script>
+
+    function modificar() {
+
+      //Mostar por pantalla la lista de nodos hijos del contenedor (childNodes)
+      let hijos = document.getElementById("contenedor").childNodes;
+
+      console.log("PARTE 1");
+      hijos.forEach(hijo => {
+        console.log(hijo);
+      });
+
+      //Mostrar por pantalla la lista de hijos del contenedor (children)
+      let hijos2 = Array.from(document.getElementById("contenedor").children);
+
+      console.log("PARTE 2");
+      hijos2.forEach(hijo => {
+        console.log(hijo);
+      });
+
+      //Modificamos el primer p con childNodes y el segundo con children
+      let primerP = document.getElementById("contenedor").childNodes[1];
+      let segundoP = document.getElementById("contenedor").children[1];
+
+      primerP.innerHTML = "Primer Párrafo modificado con childNodes";
+      segundoP.innerHTML = "Segundo Párrafo modificado con children";
+
+    }
+  </script>
+</body>
+
+</html>
