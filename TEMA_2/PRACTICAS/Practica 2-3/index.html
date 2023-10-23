@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Práctica 2-3</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Lista de Tareas</h1>
+    <div class="container-tareas">
+      <div class="tareas">
+        <ul id="lista-tareas">
+          <li onclick="seleccionar(this)">Hacer la compra</li>
+          <li onclick="seleccionar(this)">Completar la tarea 1</li>
+          <li onclick="seleccionar(this)">Estudiar para el examen</li>
+        </ul>
+      </div>
+      <div class="crear">
+        <label for="tarea">Nueva tarea</label>
+        <input type="text" id="tarea">
+        <button onclick="añadirTarea()">Crear</button>
+        <button onclick="eliminarTarea()">Borrar</button>
+        <button onclick="moverArriba()">Mover Arriba</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
