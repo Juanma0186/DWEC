@@ -40,8 +40,17 @@ function moverArriba() {
   const lista = document.getElementById("lista-tareas");
   const tareasSeleccionadas = document.querySelectorAll(".selected");
 
-  //Movemos las tareas seleccionadas arriba del todo del elemento lista
-  for (let i = 0; i < tareasSeleccionadas.length; i++) {
-    lista.insertBefore(tareasSeleccionadas[i], lista.firstChild);
+  // Verifica si hay elementos seleccionados y si el primero no es el primer hijo de la lista
+  if (
+    tareasSeleccionadas.length > 0 &&
+    tareasSeleccionadas[0] !== lista.firstElementChild
+  ) {
+    // Mueve los elementos seleccionados una posición hacia arriba
+    for (let i = 0; i < tareasSeleccionadas.length; i++) {
+      lista.insertBefore(
+        tareasSeleccionadas[i],
+        tareasSeleccionadas[i].previousElementSibling
+      );
+    }
   }
 }
