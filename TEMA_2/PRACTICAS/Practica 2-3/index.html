@@ -4,22 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="style.css">
     <title>Práctica 2-3</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Lista de Tareas</h1>
+        <h1 class="title">TO <span class="do">DO</span> LIST</h1>
         <div class="container-tareas">
             <div class="crear">
-                <label for="tarea">Nueva tarea</label>
-                <input type="text" id="tarea">
-                <button onclick="añadirTarea()">Crear</button>
-                <button onclick="eliminarTarea()">Borrar</button>
-                <button onclick="moverArriba()">Mover Arriba</button>
+                <div>
+                    <input type="text" id="tarea" placeholder="Escribe tu tarea..." autocomplete="off">
+                    <button title="Crear" onclick="añadirTarea()" class="btnCrear"><i class="bi bi-send"></i>
+                    </button>
+                </div>
+                <div class="botones-container">
+                    <button title="Mover arriba" onclick="moverArriba()" class="btnMover">
+                        <i class="bi bi-arrow-up-short"></i>
+                    </button>
+                    <button title="Guardar" onclick="guardar()" class="btnGuardar">
+                        <i class="bi bi-floppy"></i>
+                    </button>
+                    <button title="Descargar" onclick="generarTxt()" class="btnGuardar">
+                        <i class="bi bi-download"></i>
+                    </button>
+                    <button title="Eliminar tarea" onclick="eliminarTarea()" class="btnBorrar">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                    <button title="Eliminar todo" onclick="eliminarTodo()" class="btnBorrar">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
             </div>
             <div class="tareas">
+                <span id="comprobar" class="terminar"></span>
                 <ul id="lista-tareas">
                     <li onclick="seleccionar(this)">Hacer la compra</li>
                     <li onclick="seleccionar(this)">Completar la tarea 1</li>
