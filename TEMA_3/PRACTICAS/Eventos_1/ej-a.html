@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio A</title>
+</head>
+
+<body>
+    <p id="msg"></p>
+    <div id="contenedor">
+        <button>Botón 1</button>
+        <button>Botón 2</button>
+        <button>Botón 3</button>
+    </div>
+
+    <script>
+        //Obtenemos el contenedor y el mensaje
+        let contenedor = document.querySelector("#contenedor");
+        let msg = document.querySelector("#msg");
+
+        contenedor.addEventListener('click', function (event) {
+            //Verificamos si es un button
+            if (event.target.tagName === 'BUTTON') {
+                //Cambiamos el texto del párrafo
+                msg.innerHTML = "Has pulsado:  " + event.target.innerHTML;
+            }
+        })
+    </script>
+</body>
+
+</html>

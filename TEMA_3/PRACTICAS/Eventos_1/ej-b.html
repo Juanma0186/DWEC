@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio B</title>
+</head>
+
+<body>
+    <div id="contenedor">
+        <button>Botón 1</button>
+        <button>Botón 2</button>
+        <button>Botón 3</button>
+    </div>
+
+
+    <script>
+        //Obtenemos los botones
+        let botones = document.querySelectorAll('#contenedor button');
+
+        //Añadimos un listener a cada boton mediante un array
+        botones.forEach(boton => {
+            boton.addEventListener('click', function () {
+                alert("Has pulsado: " + boton.innerHTML);
+            })
+        });
+    </script>
+</body>
+
+</html>

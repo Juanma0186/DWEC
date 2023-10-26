@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio C</title>
+</head>
+
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento Especial</li>
+        <li>Elemento 4</li>
+    </ul>
+    <p id="msg"></p>
+
+    <script>
+        let msg = document.getElementById("msg");
+        let lista = document.querySelectorAll("li");
+        let especial = document.querySelector("li:nth-child(3)");
+
+        lista.forEach(elemento => {
+            elemento.addEventListener('click', function (elemento) {
+                if (elemento.target === especial) {
+                    msg.innerHTML = "Has pulsado el: " + elemento.target.innerHTML;
+                } else {
+                    msg.innerHTML = "Has pulsado el: " + elemento.target.innerHTML;
+                    alert("Has pulsado: " + elemento.target.innerHTML);
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

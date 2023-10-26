@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio D</title>
+    <style>
+        .texto {
+            font-size: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .tecla {
+            color: indigo;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="msg" class="texto">Pulsa una <span class="tecla">tecla</span></p>
+
+    <script>
+        let msg = document.getElementById("msg");
+
+        //Desactivamos la función default de la tecla para poder mostrarla
+        document.addEventListener('keydown', function (tecla) {
+            tecla.preventDefault();
+        })
+
+        document.addEventListener('keydown', function (event) {
+            msg.innerHTML = "Has pulsado la tecla:<span class='tecla'> " + event.key + "</span><br>Tiene el código: " + event.keyCode + "<br>Pulsa otra tecla!!";
+        })
+    </script>
+</body>
+
+</html>
