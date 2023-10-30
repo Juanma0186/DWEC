@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ej-f.css">
+    <title>Ejercicio F</title>
+</head>
+
+<body>
+    <div class="container" id="contenedor-blanco">
+        <div class="caja" id="box"></div>
+        <button id="boton">Haz click</button>
+    </div>
+    <p id="pulsado">¿Qué has pulsado?</p>
+
+    <script>
+        const boton = document.getElementById('boton');
+        const contenedorBlanco = document.getElementById('contenedor-blanco');
+        const p = document.getElementById('pulsado');
+
+        boton.addEventListener('click', () => {
+            p.textContent = 'Botón pulsado';
+        });
+
+        const caja = document.getElementById('box');
+        caja.addEventListener('click', () => {
+            p.textContent = 'Caja azul pulsada';
+        });
+
+        contenedorBlanco.addEventListener('click', (event) => {
+            if (event.target !== boton && event.target !== caja) {
+                p.textContent = 'Contenedor blanco pulsado';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

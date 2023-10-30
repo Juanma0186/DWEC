@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ej-e.css">
+    <title>Ejercicio E</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="raton">
+            <p id="coordenadas">Coordenadas</p>
+            <p id="color">Color</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    const container = document.getElementById("container");
+    const coordenadas = document.getElementById("coordenadas");
+
+    container.addEventListener("mousemove", function (event) {
+        const x = event.clientX - container.getBoundingClientRect().left;
+        const y = event.clientY - container.getBoundingClientRect().top;
+
+        //Actualiza el texto con las coordenadas X e Y
+        coordenadas.textContent = `X: ${x}, Y: ${y}`;
+
+        //Cambia el color de fondo basado en la posición del cursor
+        const red = Math.floor((x / container.clientWidth) * 255); //clientWidth devuelve el ancho interno del elemento
+        const green = Math.floor((y / container.clientHeight) * 255); //clientHeight devuelve el alto interno del elemento
+        container.style.backgroundColor = `rgb(${red}, ${green}, 200)`;
+
+        //Actualiza el texto con el color en hexadecimal
+        const color = container.style.backgroundColor;
+        document.getElementById("color").textContent = color;
+    })
+</script>
+
+</html>

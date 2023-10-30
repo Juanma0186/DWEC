@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ej-g.css">
+    <title>Ejercicio G</title>
+</head>
+
+<body>
+    <h1>JavaScript removeEventListener()</h1>
+    <div class="container" id="caja-naranja">
+        <p>
+            This div element has an onmousemove event handler that displays a
+            random number every time you move your mouse inside this orange
+            field.
+        </p>
+        <p>
+            Click the button to remove the div's event handler.
+        </p>
+        <div>
+            <button id="add">Add</button>
+            <button id="remove">Remove</button>
+        </div>
+    </div>
+    <p id="numero">Número random</p>
+
+    <script>
+        const buttonR = document.getElementById('remove');
+        const buttonA = document.getElementById('add');
+        const container = document.getElementById('caja-naranja');
+        const numero = document.getElementById('numero');
+
+        function moverMouse(event) {
+            if (event.target !== buttonR && event.target !== buttonA) {
+                numero.innerHTML = Math.floor(Math.random() * 1000000);
+            }
+        }
+        container.addEventListener('mousemove', moverMouse);
+
+        buttonR.addEventListener('click', function () {
+            container.removeEventListener('mousemove', moverMouse);
+        });
+
+        buttonA.addEventListener('click', function () {
+            container.addEventListener('mousemove', moverMouse);
+        });
+
+    </script>
+</body>
+
+</html>
