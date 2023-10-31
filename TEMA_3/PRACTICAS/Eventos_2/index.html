@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Ejemplo de Eventos</title>
+</head>
+
+<body>
+    <h1>Ejemplo de eventos</h1>
+    <div class="raton">
+
+        <!--Click-->
+        <div class="click">
+            <button id="buttonClick">
+                Boton Click
+            </button>
+            <p id="textClick"></p>
+        </div>
+
+        <!--Mouseover-->
+        <div class="mouseOver">
+            <button id="buttonMOver">
+                Boton MouseOver&Out
+            </button>
+            <p id="textMOver"></p>
+        </div>
+
+
+        <!--Mousedown & Mouseup-->
+        <div class="mousedown&up">
+            <button id="buttonMDU">
+                Boton MouseDown&Up
+            </button>
+            <p id="textMDU"></p>
+
+
+        </div>
+
+    </div>
+
+    <div class="teclado">
+
+        <!--Keydown-->
+        <div class="keydown">
+
+        </div>
+
+        <!--Keyup-->
+        <div class="keyup">
+
+        </div>
+    </div>
+
+    <div class="formulario">
+        <form id="miFormulario">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="email" name="email" placeholder="Correo electrónico">
+            <input type="text" id="miInput" placeholder="Escribe algo">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="carga">
+        <div>
+            <div class="imagen">
+                <img id="miImagen" src="https://picsum.photos/1080" alt="Mi imagen" loading="lazy">
+            </div>
+        </div>
+        <div>
+            <p id="miParrafo">Este es un párrafo que se modificará después de cargar el documento.</p>
+        </div>
+    </div>
+
+    <div class="temp">
+        <div id="divColor">
+            <p>Solo cambia una vez</p>
+        </div>
+        <div id="divColor2">
+            <p id="cont"></p>
+        </div>
+    </div>
+
+    <div class="interact">
+        <div>
+            <input type="text" id="miInput2" placeholder="Haz clic aquí">
+        </div>
+        <div id="miDiv2">Haz clic derecho aquí</div>
+        <div>
+            <div>
+                <p id="draggable" draggable="true">Elemento arrastrable</p>
+            </div>
+            <div id="droppable">Área de destino</div>
+        </div>
+    </div>
+</body>
+
+</html>

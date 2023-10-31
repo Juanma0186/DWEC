@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.raton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightblue;
+}
+
+.raton>div {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.mouseOver {
+    background: blueviolet;
+
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightcoral;
+
+}
+
+.teclado>div {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.formulario {
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightgreen;
+}
+
+.formulario>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.imagen {
+    width: 200px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.imagen>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.carga {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightsalmon;
+}
+
+.carga p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.carga>div {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.temp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightseagreen;
+}
+
+.temp>div {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.interact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 300px);
+    gap: 1em;
+    height: auto;
+    padding: 2em;
+    background: lightpink;
+}
+
+.interact>div {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.interact>div>div {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.75em;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgreen;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: green;
+    color: white;
+}
+
+button:active {
+    background: darkgreen;
+    color: white;
+}
