@@ -3,11 +3,9 @@
 const buttonClick = document.querySelector("#buttonClick");
 const buttonMOver = document.querySelector("#buttonMOver");
 const buttonMDU = document.querySelector("#buttonMDU");
-
 const textClick = document.querySelector("#textClick");
 const textMOver = document.querySelector("#textMOver");
 const textMDU = document.querySelector("#textMDU");
-
 const divOver = document.querySelector(".mouseOver");
 
 buttonClick.addEventListener("click", () => {
@@ -108,11 +106,20 @@ div2.addEventListener("contextmenu", (event) => {
 draggable.addEventListener("dragstart", (event) => {
   event.dataTransfer.setData("text/plain", "Este es un elemento arrastrable");
 });
+
 droppable.addEventListener("dragover", (event) => {
   event.preventDefault();
 });
+
 droppable.addEventListener("drop", (event) => {
   event.preventDefault();
   const data = event.dataTransfer.getData("text/plain");
   droppable.innerHTML = data;
+});
+
+//?EVENTOS DE NAVEGACIÓN
+
+document.addEventListener("beforeunload", (event) => {
+  event.preventDefault(); // Previene que la ventana se cierre inmediatamente
+  event.returnValue = "No te vayas :(";
 });
