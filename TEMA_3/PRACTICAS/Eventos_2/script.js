@@ -31,6 +31,23 @@ buttonMDU.addEventListener("mouseup", () => {
 
 //? EVENTOS DEL TECLADO
 
+const textEnter = document.querySelector("#teclaEnter");
+const textEspacio = document.querySelector("#teclaEspacio");
+
+document.addEventListener("keydown", (event) => {
+  // Verificar si la tecla presionada es la tecla "Enter" (código 13)
+  if (event.keyCode === 13) {
+    textEnter.textContent = "Presionaste la tecla Enter";
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  // Verificar si la tecla soltada es la tecla "Espacio" (código 32)
+  if (event.keyCode === 32) {
+    textEspacio.textContent = "Soltaste la tecla Espacio";
+  }
+});
+
 //? EVENTOS DEL FORMULARIO
 
 const formulario = document.getElementById("miFormulario");

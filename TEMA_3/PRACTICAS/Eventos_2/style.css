@@ -34,9 +34,16 @@ body {
     color: white;
 }
 
+.raton>div:nth-child(1) {
+    background: lightcoral;
+}
+
 .mouseOver {
     background: blueviolet;
+}
 
+.raton>div:nth-child(3) {
+    background: lightpink;
 }
 
 .teclado {
