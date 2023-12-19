@@ -25,7 +25,20 @@ const server = http.createServer((req, res) => {
             res.writeHead(500, { 'Content-Type': 'text/html' });
             res.end('<h1>Error interno en el servidor</h1>');
         } else {
-            res.writeHead(200, { 'Content-Type': 'text/html' });
+
+            // Obtenemos la extensión del archivo solicitado
+            const extension = path.extname(filePath);
+
+            // Definimos tipos MIME para diferentes extensiones
+            const varios = {
+                '.html': 'text/html',
+                '.css': 'text/css',
+            };
+
+            // Obtenemos el tipo MIME basado en la extensión de archivo
+            const tipoMime = varios[extension] || 'application/octet-stream';
+
+            res.writeHead(200, { 'Content-Type': tipoMime });
             res.end(data);
         }
     })
