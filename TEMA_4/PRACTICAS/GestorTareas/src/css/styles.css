@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #4d51c0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e31a0;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: "Kalam", sans-serif;
+  background: linear-gradient(135deg, #7073f6 21px, #4d51c0 22px, #4d51c0 24px, transparent 24px, transparent 67px, #4d51c0 67px, #4d51c0 69px, transparent 69px), linear-gradient(225deg, #7073f6 21px, #4d51c0 22px, #4d51c0 24px, transparent 24px, transparent 67px, #4d51c0 67px, #4d51c0 69px, transparent 69px) 0 64px;
+  background-color: #7073f6;
+  background-size: 64px 128px;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#titulo {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2em auto 0;
+  padding: 0.5em 1em 0.25em;
+  border: 3px solid #4d51c0;
+  border-radius: 16px;
+  background: #7073f6;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+#titulo h1 {
+  font: 3rem "Just Another Hand", sans-serif;
+  color: #fff;
+  font-weight: bold;
+}
+#titulo span {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#titulo span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 100%;
+  height: 3px;
+  background-color: #f8cf56;
+  transition: right 0.3s ease;
+}
+#titulo:hover i {
+  cursor: pointer;
+  color: #31de94;
+  transition: all 0.3s ease;
+}
+#titulo:hover span {
+  color: #31de94;
+}
+#titulo:hover span::before {
+  right: 0;
+}
+
+#limpiar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 64px;
+  height: 64px;
+  background: #dddddd;
+  border: 3px solid #bebebe;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+#limpiar:hover {
+  background: #c42b2b;
+  border-color: #ae1f1f;
+}
+#limpiar i {
+  color: #c42b2b;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  transition: color 0.3s ease;
+}
+#limpiar:hover i {
+  color: #fff;
+  background: #c42b2b;
+}/*# sourceMappingURL=styles.css.map */

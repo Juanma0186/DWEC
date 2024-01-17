@@ -31,13 +31,13 @@ const server = http.createServer((req, res) => {
 
             // Definimos tipos MIME para diferentes extensiones
             const varios = {
-                '.html': 'text/html',
                 '.css': 'text/css',
+                '.html': 'text/html',
             };
 
             // Obtenemos el tipo MIME basado en la extensión de archivo
             const tipoMime = varios[extension] || 'application/octet-stream';
-
+            console.log(data);
             res.writeHead(200, { 'Content-Type': tipoMime });
             res.end(data);
         }
