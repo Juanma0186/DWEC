@@ -1,0 +1,67 @@
+//Importamos las fuentes
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+// Fuentes
+$font-titulo: 'Just Another Hand', sans-serif;
+$font-parrafo:'Kalam', sans-serif;
+
+// Paleta de Colores
+// Azules
+$colorFondo: #7073f6;
+$colorFondo-mid: #4d51c0;
+$colorFondo-dark: #2e31a0;
+// Amarillos
+$amarillo: #f8cf56;
+$amarillo-mid: #c4a42b;
+$amarillo-dark: #ae8f1f;
+// Verdes
+$verde: #31de94;
+$verde-mid: #2bc48a;
+$verde-dark: #1fae6e;
+// Rojos
+$rojo: #de3131;
+$rojo-mid: #c42b2b;
+$rojo-dark: #ae1f1f;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Estilos scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $colorFondo;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $colorFondo-mid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $colorFondo-dark;
+}
+
+body{
+  min-height: 100dvh;
+  font-family: $font-parrafo;
+  background: $colorFondo;
+}
+
+h1{
+  font: 3rem $font-titulo;
+  text-align: center;
+  padding-top: 1em;
+  color: #fff;
+  font-weight: bold;
+  span{
+    color: $verde;
+    text-decoration: line-through 3px $amarillo;
+  }
+}
