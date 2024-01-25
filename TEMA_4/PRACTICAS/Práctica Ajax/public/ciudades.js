@@ -45,6 +45,22 @@ function getData() {
   xhr.send();
 }
 
+const anadirCiudad = document.getElementById("anadirCiudad");
+anadirCiudad.addEventListener("click", addCity);
+
+function addCity() {
+  const newCiudad = document.getElementById("newCiudad").value;
+  const newWeb = document.getElementById("newWeb").value;
+  xhr.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const ciudades = JSON.parse(this.responseText);
+    }
+  };
+  xhr.open("POST", "/", true);
+  xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+  xhr.send(JSON.stringify({ nombre: newCiudad, web: newWeb }));
+}
+
 window.onload = getData;
 
 // xhr.open("POST", "/ciudades", true);
