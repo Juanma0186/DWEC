@@ -15,6 +15,7 @@ const peliculasFavs: [string, number, string][] = [
   ["El Padrino II", 1974, "Drama"],
   ["El Padrino III", 1990, "Drama"],
 ]
+
 function mostrarPeliculas() {
   lista2.innerHTML = ""
   peliculasFavs.forEach(peli => {
