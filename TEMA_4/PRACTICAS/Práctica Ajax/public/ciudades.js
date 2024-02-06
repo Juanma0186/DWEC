@@ -62,7 +62,3 @@ function addCity() {
 }
 
 window.onload = getData;
-
-// xhr.open("POST", "/ciudades", true);
-// xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-// xhr.send(JSON.stringify({ dosLetras: dosLetras }));
