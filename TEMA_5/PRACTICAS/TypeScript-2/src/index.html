@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Gestor de Alumnos</h1>
+  <form action="">
+    <label for="nombre">Nombre:
+      <input type="text" name="nombre" id="nombre">
+    </label>
+    <br />
+    <label for="edad">
+      Edad:
+      <input type="number" name="edad" id="edad">
+    </label>
+    <br />
+    <label for="titulacion">
+      Titulación:
+      <input type="text" name="titulacion" id="titulacion">
+    </label>
+    <br />
+    <button id="agregar">
+      Añadir
+    </button>
+  </form>
+
+  <h2>Listado de alumnos</h2>
+  <ul id="listaAlumnos"></ul>
+  <script type="module" src="./alumnos.js"></script>
+</body>
+
+</html>
