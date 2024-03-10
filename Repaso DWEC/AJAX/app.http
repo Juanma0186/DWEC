@@ -1,0 +1,12 @@
+### Todas las ciudades
+GET http://localhost:3000/ciudades
+
+### Añadir ciudad
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+  "nombre": "Pepe",
+  "web": "www.google.es"
+}
+

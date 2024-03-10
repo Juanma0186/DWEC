@@ -1,0 +1,10 @@
+### Autorización válida
+GET http://localhost:3000/ruta
+token: 1234
+
+### Autorización inválida
+GET http://localhost:3000/ruta
+token: 123
+
+### Sin autorización
+GET http://localhost:3000/ruta_publica
